@@ -12,7 +12,7 @@ class CreateAccActivity : AppCompatActivity() {
         setContentView(R.layout.activity_create_acc)
 
         val back = findViewById<FloatingActionButton>(R.id.back_icon)
-        val register =findViewById<androidx.appcompat.widget.AppCompatButton>(R.id.register)
+        val register =findViewById<androidx.appcompat.widget.AppCompatButton>(R.id.sign_up)
         val login = findViewById<TextView>(R.id.login)
 
 

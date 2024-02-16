@@ -11,21 +11,21 @@
         android:id="@+id/subTitle"
         android:layout_width="300dp"
         android:layout_height="29dp"
-        android:layout_marginBottom="52dp"
+        android:layout_marginBottom="124dp"
         android:text="Invest and double your income now"
         android:textAlignment="center"
         android:textColor="#000000"
         android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/name_act"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.738"
+        app:layout_constraintHorizontal_bias="0.693"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/Title1"
         android:layout_width="295dp"
         android:layout_height="44dp"
-        android:layout_marginTop="88dp"
+        android:layout_marginTop="55dp"
         android:text="Create an Account"
         android:textAlignment="center"
         android:textColor="#0E0E0E"
@@ -35,7 +35,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.706"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
 
     <EditText
         android:id="@+id/password_act"
@@ -77,7 +78,7 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/register"
+        android:id="@+id/sign_up"
         android:layout_width="247dp"
         android:layout_height="60dp"
         android:text="Create Account"
@@ -92,7 +93,7 @@
         android:layout_width="147dp"
         android:layout_height="48dp"
         android:text="Agree with terms and conditions"
-        app:layout_constraintBottom_toTopOf="@+id/register"
+        app:layout_constraintBottom_toTopOf="@+id/sign_up"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.31"
         app:layout_constraintStart_toStartOf="parent" />
@@ -101,7 +102,7 @@
         android:id="@+id/back_icon"
         android:layout_width="70dp"
         android:layout_height="66dp"
-        android:layout_marginStart="44dp"
+        android:layout_marginStart="16dp"
         android:layout_marginBottom="4dp"
         android:clickable="true"
         app:backgroundTint="#fff"
