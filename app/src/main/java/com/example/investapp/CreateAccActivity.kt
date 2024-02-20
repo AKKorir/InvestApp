@@ -24,7 +24,7 @@ class CreateAccActivity : AppCompatActivity() {
             startActivity(backIntent)
         }
         register.setOnClickListener {
-            val registerIntent = Intent( )
+            val registerIntent = Intent( this,HomeActivity::class.java)
             startActivity(registerIntent)
         }
         login.setOnClickListener{

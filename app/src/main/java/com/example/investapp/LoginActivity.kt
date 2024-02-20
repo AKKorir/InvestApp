@@ -36,7 +36,7 @@ class LoginActivity : AppCompatActivity() {
                 return Patterns.EMAIL_ADDRESS.matcher(vemail).matches()
             }
 
-            val LoginIntent = Intent()
+            val LoginIntent = Intent(this,HomeActivity::class.java)
             startActivity(LoginIntent)
         }
         regis.setOnClickListener {

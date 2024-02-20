@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/navigation_home"
+        android:enabled="true"
+        android:title="Home"
+        android:icon="@drawable/home" />
+    <item
+        android:id="@+id/searchItem"
+        android:enabled="true"
+        android:title="Search"
+        android:icon="@drawable/search" />
+    <item
+        android:id="@+id/transact"
+        android:enabled="true"
+        android:title="Transact"
+        android:icon="@drawable/transaction" />
+    <item
+        android:id="@+id/profile"
+        android:enabled="true"
+        android:title="Profile"
+        android:icon="@drawable/user" />
+
+</menu>
