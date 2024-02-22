@@ -8,6 +8,7 @@ import android.util.Patterns
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
+import android.widget.Toast
 import com.wajahatkarim3.easyvalidation.core.view_ktx.validator
 
 class LoginActivity : AppCompatActivity() {
@@ -37,7 +38,16 @@ class LoginActivity : AppCompatActivity() {
             }
 
             val LoginIntent = Intent(this,HomeActivity::class.java)
-            startActivity(LoginIntent)
+
+            if( isValidEmail(vemail) && isValidPass(vpass)){
+
+                startActivity(LoginIntent)
+                Toast.makeText(this,"Welcome",Toast.LENGTH_SHORT).show()
+                true
+            }else{
+                Toast.makeText(this, "Email or Password is Invalid", Toast.LENGTH_LONG).show()
+                true
+            }
         }
         regis.setOnClickListener {
             val registIntent = Intent(this, CreateAccActivity::class.java)

@@ -5,6 +5,28 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".HomeActivity" >
+ <androidx.constraintlayout.utils.widget.ImageFilterButton
+     android:id="@+id/home"
+     android:layout_width="48dp"
+     android:layout_height="48dp"
+     android:layout_marginTop="30dp"
+     android:src="@drawable/menu"
+     android:background="@color/white"
+     android:layout_marginStart="40dp"
+
+     />
+
+ <androidx.constraintlayout.utils.widget.ImageFilterButton
+     android:id="@+id/notif"
+     android:layout_width="48dp"
+     android:layout_height="48dp"
+     android:layout_marginTop="30dp"
+     android:layout_marginEnd="30dp"
+     android:background="@color/white"
+     android:src="@drawable/notif"
+     android:layout_alignParentEnd="true"
+     android:layout_marginRight="40dp"
+     />
 
  <TextView
      android:id="@+id/headert"
@@ -14,7 +36,8 @@
      android:layout_height="wrap_content"
      android:text="Welcome, Andrew."
      android:textSize="28sp"
-     android:textColor="@color/black"/>
+     android:textColor="@color/black"
+     />
 
 
  <androidx.cardview.widget.CardView
@@ -25,7 +48,8 @@
      android:layout_centerHorizontal="true"
      android:padding="4dp"
      android:layout_gravity="center"
-     app:cardBackgroundColor="@color/green">
+     app:cardBackgroundColor="@color/green"
+     app:cardCornerRadius="25dp">
   <androidx.constraintlayout.widget.ConstraintLayout
       android:padding="4dp"
       android:layout_width="match_parent"
@@ -38,7 +62,7 @@
          android:text="Your Total asset Portfolio"
          android:textColor="@color/white"
          android:textAlignment="center"
-         android:textSize="16dp"/>
+         android:textSize="16sp"/>
 
    <TextView
        android:id="@+id/assetVal"
@@ -48,14 +72,15 @@
        android:layout_marginTop="30dp"
        android:text="Kes 1,800,000"
        android:textColor="@color/white"
-       android:textSize="28dp"
+       android:textSize="28sp"
        tools:layout_editor_absoluteX="5dp"
        tools:layout_editor_absoluteY="-36dp" />
 
    <androidx.appcompat.widget.AppCompatButton
+       android:id="@+id/investbtn"
        android:layout_width="130dp"
        android:layout_height="60dp"
-       android:background="@color/white"
+       android:background="@color/grey"
        android:text="Invest now"
        android:textSize="18dp"
        app:layout_constraintBottom_toBottomOf="parent"
@@ -63,8 +88,12 @@
        app:layout_constraintHorizontal_bias="0.93"
        app:layout_constraintStart_toStartOf="parent"
        app:layout_constraintTop_toTopOf="parent"
+       app:shapeAppearanceOverlay="@style/RoundCorner"
+
        app:layout_constraintVertical_bias="0.733"
-       tools:ignore="MissingConstraints" />
+       tools:ignore="MissingConstraints"
+
+       />
 
 
   </androidx.constraintlayout.widget.ConstraintLayout>
@@ -76,8 +105,9 @@
      android:layout_height="wrap_content"
      android:text="Best Plans"
      android:layout_marginTop="260dp"
+     android:layout_marginLeft="25dp"
      android:textColor="@color/black"
-     android:textSize="28dp"/>
+     android:textSize="28sp"/>
 
  <TextView
      android:id="@+id/deals"
@@ -87,50 +117,17 @@
      android:layout_marginTop="260dp"
      android:layout_marginEnd="12dp"
      android:text="See more >"
-     android:textColor="@color/black"
+     android:textColor="@color/red"
      android:textSize="16dp"
      android:textAlignment="center"/>
 
- <LinearLayout
-     android:id="@+id/horScroll"
-    android:layout_width="match_parent"
-    android:layout_height="180dp"
-    android:layout_marginTop="300dp">
 
-  <androidx.cardview.widget.CardView
-      android:layout_width="120dp"
-      android:layout_height="130dp"
-      android:layout_gravity="center"
-      app:cardBackgroundColor="@color/gold"
-      android:padding="4dp"
-      android:layout_marginLeft="40dp">
-      <TextView
-          android:layout_width="match_parent"
-          android:layout_height="wrap_content"
-          android:layout_marginTop="10dp"
-          android:text="Gold"
-          android:textAlignment="center"
-          android:textColor="@color/black"
-          android:textSize="16dp"/>
-
-   <TextView
-       android:layout_width="match_parent"
-       android:layout_height="20dp"
-       android:layout_marginTop="25dp"
-       android:text="30% return"
-       android:textAlignment="center"
-       android:textColor="@color/black"
-       android:textSize="16dp"/>
-   <ImageView
-       android:layout_width="match_parent"
-       android:layout_height="80dp"
-       android:layout_marginLeft="30dp"
-       android:layout_marginTop="55dp"
-       android:src="@drawable/dolar"
-
-    />
-  </androidx.cardview.widget.CardView>
- </LinearLayout>
+ <androidx.recyclerview.widget.RecyclerView
+     android:id="@+id/asscards"
+     android:layout_width="match_parent"
+     android:layout_height="wrap_content"
+     android:layout_marginTop="300dp"
+     />
 
 
  <TextView
@@ -145,6 +142,7 @@
      android:textSize="26dp" />
 
  <androidx.recyclerview.widget.RecyclerView
+     android:id="@+id/invguide"
      android:layout_width="match_parent"
      android:layout_height="match_parent"
      android:layout_marginTop="520dp"
