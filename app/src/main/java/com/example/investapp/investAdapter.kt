@@ -10,11 +10,11 @@ import androidx.recyclerview.widget.RecyclerView
 
 class investAdapter(
     private val context: Context,
-    private val investList: ArrayList<investGuide>): RecyclerView.Adapter<investAdapter.InvestViewHolder>() {
+    private val investList: ArrayList <investGuide>): RecyclerView.Adapter <investAdapter.InvestViewHolder>() {
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): InvestViewHolder {
-        val newsView =LayoutInflater.from(context).inflate(R.layout.investguide,parent, false)
+        val newsView =LayoutInflater.from(parent.context).inflate(R.layout.investguide,parent, false)
         return InvestViewHolder(newsView)
     }
 
