@@ -1,6 +1,5 @@
 package com.example.investapp
 
-import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -8,9 +7,9 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
-class investAdapter(
-    private val context: Context,
-    private val investList: ArrayList <investGuide>): RecyclerView.Adapter <investAdapter.InvestViewHolder>() {
+class InvestAdapter(
+    private val investList: ArrayList<investGuide>
+): RecyclerView.Adapter <InvestAdapter.InvestViewHolder>() {
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): InvestViewHolder {

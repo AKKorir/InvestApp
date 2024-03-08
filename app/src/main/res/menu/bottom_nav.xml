@@ -8,17 +8,17 @@
     <item
         android:id="@+id/searchItem"
         android:enabled="true"
-        android:title="Search"
+        android:title="Product"
         android:icon="@drawable/search" />
     <item
         android:id="@+id/transact"
         android:enabled="true"
-        android:title="Transact"
+        android:title="Transaction"
         android:icon="@drawable/transaction" />
     <item
         android:id="@+id/profile"
         android:enabled="true"
-        android:title="Profile"
+        android:title="Account"
         android:icon="@drawable/user" />
 
 </menu>

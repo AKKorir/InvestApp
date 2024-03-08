@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -7,11 +7,49 @@
     tools:context=".Account">
 
     <!-- TODO: Update blank fragment layout -->
+    <ImageButton
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:id="@+id/nav_back"
+        android:enabled="true"
+        android:icon="@drawable/baseline_back_24"
+        android:background="@android:color/transparent"
+        android:layout_margin="20dp"
+        tools:ignore="MissingConstraints"
+        />
+
+
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Accounts Fragment"
-        android:gravity="center"
-        android:textSize="30sp"/>
+        android:layout_height="wrap_content"
+        android:text="Profile"
+        android:textSize="30sp"
+        android:layout_marginTop="80dp"
+        tools:ignore="MissingConstraints"
+        android:layout_marginLeft="20dp"/>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="160dp"
+        android:src="@drawable/profile" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/imageView"
+        android:layout_marginTop="20dp">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/profileview"
+            android:layout_width="match_parent"
+            android:layout_height="396dp"
+            android:layout_margin="20dp" />
+    </LinearLayout>
+
+
+
+
+</RelativeLayout>

@@ -1,6 +1,5 @@
 package com.example.investapp
 
-import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -8,9 +7,9 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
-class assetAdapter(
-    private val context: Context,
-    private val assetList: ArrayList <asset>): RecyclerView.Adapter  <assetAdapter.AssetViewHolder>(){
+class AssetAdapter(
+    private val assetList: ArrayList<asset>
+): RecyclerView.Adapter  <AssetAdapter.AssetViewHolder>(){
 
     override fun getItemCount(): Int {
         return assetList.size
@@ -38,8 +37,6 @@ class assetAdapter(
     }
 
 }
-
-
 
 
 

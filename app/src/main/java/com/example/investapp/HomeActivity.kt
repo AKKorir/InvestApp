@@ -10,7 +10,6 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.example.investapp.R
-import com.example.investapp.assetAdapter
 import com.example.investapp.databinding.ActivityMainBinding
 
 
@@ -38,19 +37,19 @@ class HomeActivity : AppCompatActivity() {
                 R.id.searchItem -> {
                     replaceFrag(Product())
                     // Handle the dashboard action
-                    Toast.makeText(this, "Dashboard Clicked", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this, "Products Clicked", Toast.LENGTH_SHORT).show()
                     true
                 }
                 R.id.transact -> {
                     replaceFrag(Transact())
                     // Handle the notifications action
-                    Toast.makeText(this, "Notifications Clicked", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this, "Transaction Clicked", Toast.LENGTH_SHORT).show()
                     true
                 }
                 R.id.profile -> {
                     replaceFrag(Account())
                     // Handle the notifications action
-                    Toast.makeText(this, "Notifications Clicked", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this, "Account Clicked", Toast.LENGTH_SHORT).show()
                     true
                 }
                 else -> false

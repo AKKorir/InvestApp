@@ -5,8 +5,11 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.compose.foundation.layout.Arrangement
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.investapp.databinding.FragmentAccountBinding
+import com.example.investapp.databinding.FragmentHomeBinding
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -15,10 +18,14 @@ private const val ARG_PARAM2 = "param2"
 
 
 class Home : Fragment() {
-    private lateinit var investAdapter: investAdapter
-    private lateinit var assetAdapter: assetAdapter
-    private lateinit var assetArrayList: ArrayList<asset>
-    private lateinit var investArrayList: ArrayList<investGuide>
+    private lateinit var assetAdapter : AssetAdapter
+    private lateinit var investAdapter : InvestAdapter
+    private lateinit var assrecycle: RecyclerView
+    private lateinit var newsRecycle: RecyclerView
+
+    private lateinit var assetArrayList : ArrayList<asset>
+    private lateinit var investArrayList : ArrayList<investGuide>
+    private lateinit var binding: FragmentHomeBinding
 
 
     lateinit var cardImage: Array<Int>
@@ -43,8 +50,27 @@ class Home : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_home, container, false)
+
+        binding= FragmentHomeBinding.inflate(inflater,container, false)
+
+        assetCards()
+        investcard()
+        assrecycle = binding.asscards
+        assrecycle.layoutManager = LinearLayoutManager(context,LinearLayoutManager.HORIZONTAL, false)
+        assrecycle.setHasFixedSize(true)
+        assetAdapter = AssetAdapter(assetArrayList)
+        assrecycle.adapter= assetAdapter
+
+        newsRecycle = binding.invguide
+        newsRecycle.layoutManager = LinearLayoutManager(context)
+        newsRecycle.setHasFixedSize(true)
+        investAdapter = InvestAdapter(investArrayList)
+        newsRecycle.adapter= investAdapter
+
+        return binding.root
+
+
+
 
     }
 
@@ -71,27 +97,15 @@ class Home : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        assetCards()
-        investcard()
-        val layoutManager = LinearLayoutManager(context)
-        val invRecycle: RecyclerView = view.findViewById(R.id.invguide)
-        invRecycle.layoutManager = layoutManager
-        invRecycle.setHasFixedSize(true)
-        assetAdapter = assetAdapter(assetArrayList)
-        invRecycle.adapter = assetAdapter
 
 
-        val newsRecycle: RecyclerView = view.findViewById(R.id.invguide)
-        newsRecycle.layoutManager = layoutManager
-        newsRecycle.setHasFixedSize(true)
-        investAdapter = investAdapter(investArrayList)
-        newsRecycle.adapter = investAdapter
     }
 
 
 
-        private fun assetCards() {
-            assetArrayList = arrayListOf <asset>()
+        private fun assetCards(): ArrayList<asset> {
+            assetArrayList = arrayListOf()
+
             cardImage = arrayOf(
                 R.drawable.dolar,
                 R.drawable.silva,
@@ -120,11 +134,12 @@ class Home : Fragment() {
                 assetArrayList.add(rasset)
 
             }
+            return assetArrayList
 
         }
 
 
-        private fun investcard() {
+        private fun investcard(): ArrayList<investGuide> {
             investArrayList = arrayListOf<investGuide>()
             investImage = arrayOf(
                 R.drawable.news1,
@@ -136,9 +151,9 @@ class Home : Fragment() {
             nheading = arrayOf(
                 "Basic type of investment",
                 "How much can you start with",
-                "What is the best Crypto to strat with",
+                "What is the best Crypto?",
                 "Current trends",
-                "Investment patterns in the market",
+                "Investment market patterns",
             )
             subheading = arrayOf(
                 "This is how you set foot into 2024 stock market. What next?",
@@ -151,6 +166,7 @@ class Home : Fragment() {
                 val mnews = investGuide(investImage[i], nheading[i], subheading[i])
                 investArrayList.add(mnews)
             }
+            return investArrayList
         }
 }
 
